@@ -1,0 +1,50 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "@nestjs/swagger",
+        "options": {
+          "classValidatorShim": true,
+          "introspectComments": true,
+          "dtoFileNameSuffix": [
+            ".dto.ts",
+            ".entity.ts",
+            ".response.ts"
+          ]
+        }
+      }
+    ],
+    "webpack": true
+  },
+  "projects": {
+    "mail": {
+      "type": "library",
+      "root": "libs/mail",
+      "entryFile": "index",
+      "sourceRoot": "libs/mail/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/mail/tsconfig.lib.json"
+      }
+    },
+    "src/mail": {
+      "type": "library",
+      "root": "libs/src/mail",
+      "entryFile": "index",
+      "sourceRoot": "libs/src/mail/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/src/mail/tsconfig.lib.json"
+      }
+    },
+    "momo": {
+      "type": "library",
+      "root": "libs/momo",
+      "entryFile": "index",
+      "sourceRoot": "libs/momo/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/momo/tsconfig.lib.json"
+      }
+    }
+  }
+}
